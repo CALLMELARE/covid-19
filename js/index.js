@@ -334,7 +334,7 @@ function TableFilters({
         e(CountrySearch, {countrySearchQuery, onCountrySearch})
       ),
       e('div', {className: 'form-group form-check mr-3 mb-2'},
-        e(Toggle, {checked: groupByCountry, onChange: onGroupByCountries, text: '按国家分组'})
+        e(Toggle, {checked: groupByCountry, onChange: onGroupByCountries, text: '按国家/地区分组'})
       ),
       e('div', {className: 'form-group form-check mr-3 mb-2'},
         e(Toggle, {text: '对数坐标', onChange: onUseLogScale, checked: useLogScale})
@@ -384,7 +384,7 @@ function RegionsTable({
         e('th', null, ''),
         e('th', null, '编号'),
         e('th', {sortable: 'sortable', onClick: () => onColumnSort(covidSorts.country.key)},
-          groupByCountry ? '国家' : '地区',
+          groupByCountry ? '国家/地区' : '地区',
           e(ColumnSorter, {sortDirection: dataSort === covidSorts.country.key ? dataSortDirection : null})
         ),
         e('th', {sortable: 'sortable', onClick: () => onColumnSort(covidSorts.confirmed.key)},
