@@ -476,7 +476,7 @@ function RegionsTable({
       e('div', {className: 'table-responsive covid-data-table-wrapper'},
         e('table', {className: 'table table-hover'}, tHead, tBody)
       ),
-      e('small', {className: 'text-muted'}, '台湾省是中华人民共和国省级行政区')
+      e('small', {className: 'text-muted'}, '*台湾省是中华人民共和国省级行政区')
     )
   );
 }
