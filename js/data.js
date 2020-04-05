@@ -16,7 +16,7 @@ const deathsPalette = ['#FF6384', '#93001D', '#F90031', '#FF2D57', '#C60027'];
 const covidDataTypes = {
   confirmed: {
     key: 'confirmed',
-    title: 'Confirmed',
+    title: '累计确诊',
     dataSourceUrl: `${covidDataBaseURL}/time_series_covid19_confirmed_global.csv`,
     borderColor: confirmedPalette,
     alertClass: 'alert-warning',
@@ -24,7 +24,7 @@ const covidDataTypes = {
   },
   recovered: {
     key: 'recovered',
-    title: 'Recovered',
+    title: '累计康复',
     dataSourceUrl: `${covidDataBaseURL}/time_series_covid19_recovered_global.csv`,
     borderColor: recoveredPalette,
     alertClass: 'alert-success',
@@ -32,7 +32,7 @@ const covidDataTypes = {
   },
   deaths: {
     key: 'deaths',
-    title: 'Deaths',
+    title: '累计死亡',
     dataSourceUrl: `${covidDataBaseURL}/time_series_covid19_deaths_global.csv`,
     borderColor: deathsPalette,
     alertClass: 'alert-danger',
@@ -43,7 +43,7 @@ const covidDataTypes = {
 const covidCountries = {
   all: {
     key: 'Global',
-    title: 'Global',
+    title: '全球',
     index: -1,
   }
 };

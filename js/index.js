@@ -177,7 +177,7 @@ function App() {
 function LastUpdatedDate({covidData}) {
   const lastUpdatedDate = getLastUpdatedDate(covidData);
   return e('small', {className: 'text-muted'},
-    'Last updated: ',
+    '数据更新于: ',
     e('span', {className: 'badge badge-dark'}, lastUpdatedDate)
   );
 }
@@ -334,14 +334,14 @@ function TableFilters({
         e(CountrySearch, {countrySearchQuery, onCountrySearch})
       ),
       e('div', {className: 'form-group form-check mr-3 mb-2'},
-        e(Toggle, {checked: groupByCountry, onChange: onGroupByCountries, text: 'Group by countries'})
+        e(Toggle, {checked: groupByCountry, onChange: onGroupByCountries, text: '按国家分组'})
       ),
       e('div', {className: 'form-group form-check mr-3 mb-2'},
-        e(Toggle, {text: 'Logarithmic scale', onChange: onUseLogScale, checked: useLogScale})
+        e(Toggle, {text: '对数坐标', onChange: onUseLogScale, checked: useLogScale})
       ),
       e('button', {className: 'btn btn-dark mb-2', onClick: onReset},
         e('i', {className: 'fas fa-trash-alt mr-2'}),
-        'Reset Filters'
+        '重置'
       )
     )
   );
@@ -352,7 +352,7 @@ function CountrySearch({countrySearchQuery, onCountrySearch}) {
     e('input', {
       type: 'search',
       className: 'form-control',
-      placeholder: 'Search country',
+      placeholder: '搜索',
       onChange: (e) => onCountrySearch(e.target.value),
       value: countrySearchQuery,
     })
@@ -382,9 +382,9 @@ function RegionsTable({
     e('thead', {className: 'thead-dark'},
       e('tr', null,
         e('th', null, ''),
-        e('th', null, ''),
+        e('th', null, '编号'),
         e('th', {sortable: 'sortable', onClick: () => onColumnSort(covidSorts.country.key)},
-          groupByCountry ? 'Countries' : 'Regions',
+          groupByCountry ? '国家' : '地区',
           e(ColumnSorter, {sortDirection: dataSort === covidSorts.country.key ? dataSortDirection : null})
         ),
         e('th', {sortable: 'sortable', onClick: () => onColumnSort(covidSorts.confirmed.key)},
@@ -400,7 +400,7 @@ function RegionsTable({
           e(ColumnSorter, {sortDirection: dataSort === covidSorts.deaths.key ? dataSortDirection : null})
         ),
         e('th', {sortable: 'sortable', onClick: () => onColumnSort(covidSorts.mortality.key)},
-          'Mortality',
+          '死亡率',
           e(ColumnSorter, {sortDirection: dataSort === covidSorts.mortality.key ? dataSortDirection : null})
         ),
       ),
@@ -476,7 +476,7 @@ function RegionsTable({
       e('div', {className: 'table-responsive covid-data-table-wrapper'},
         e('table', {className: 'table table-hover'}, tHead, tBody)
       ),
-      e('small', {className: 'text-muted'}, '* Table is scrollable')
+      e('small', {className: 'text-muted'}, '台湾省是中华人民共和国省级行政区')
     )
   );
 }
